@@ -33,6 +33,13 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
-}
+    },
+
+	  vendor: ['element-ui']
+  },
+
+	/**
+	 * include third-party plugin
+	 */
+	plugins: ['~plugins/element-ui']
+};
