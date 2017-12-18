@@ -1,17 +1,75 @@
 <template>
   <div>
       <MyNav></MyNav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <el-row>
+          <el-col :span="1">&nbsp;</el-col>
+          <el-col :span="22">
+              <el-carousel :interval="4000" type="card" height="300px">
+                  <el-carousel-item><img src="../assets/test1.jpeg" class="cardPic"></el-carousel-item>
+                  <el-carousel-item><img src="../assets/test2.jpeg" class="cardPic"></el-carousel-item>
+                  <el-carousel-item><img src="../assets/test1.jpeg" class="cardPic"></el-carousel-item>
+                  <el-carousel-item><img src="../assets/test2.jpeg" class="cardPic"></el-carousel-item>
+                  <el-carousel-item><img src="../assets/test1.jpeg" class="cardPic"></el-carousel-item>
+                  <el-carousel-item><img src="../assets/test2.jpeg" class="cardPic"></el-carousel-item>
+              </el-carousel>
+
+              <br>
+              <div class="pageName">
+                  <span class="title" style="float: left">最新文章</span>
+                  <div style="float: right">
+                      <el-button type="primary" round size="small">更多文章&nbsp;<i class="el-icon-d-arrow-right"></i></el-button>
+                  </div>
+              </div>
+              <br>
+              <div class="line"></div>
+              <el-row>
+                  <el-col :span="6" v-for = "item in 6" key="item">
+                      <div class="item">
+                          <img src="../assets/test1.jpeg" style="width: 200px">
+                          <div>test name</div>
+                      </div>
+                  </el-col>
+              </el-row>
+
+              <br>
+              <div class="pageName">
+                  <span class="title" style="float: left">最新工具</span>
+                  <div style="float: right">
+                      <el-button type="primary" round size="small">更多工具&nbsp;<i class="el-icon-d-arrow-right"></i></el-button>
+                  </div>
+              </div>
+              <br>
+              <div class="line"></div>
+              <el-row>
+                  <el-col :span="6" v-for = "item in 6" key="item">
+                      <div class="item">
+                          <img src="../assets/test1.jpeg" style="width: 200px">
+                          <div>test name</div>
+                      </div>
+                  </el-col>
+              </el-row>
+          </el-col>
+          <el-col :span="1"></el-col>
+      </el-row>
+      <MyFooter></MyFooter>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
 import MyNav from '~/components/Nav.vue'
+import MyFooter from '~/components/Footer.vue'
 
 export default {
   components: {
     Logo,
-    MyNav
+    MyNav,
+    MyFooter
   }
 }
 </script>
@@ -44,5 +102,30 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.cardPic{
+    height: 300px;
+}
+
+.pageName{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.pageName .title{
+    font-weight: bold;
+    font-size: 20px
+}
+
+.line{
+    border-bottom: 1px solid #e6e6e6;
+    padding-top: 20px;
+}
+
+.item{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 </style>

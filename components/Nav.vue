@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="myheader">
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
         <el-row>
             <el-col :span="4">
@@ -11,7 +11,6 @@
                 <el-menu-item index="3"><span class="tab">关于</span></el-menu-item>
             </el-col>
         </el-row>
-
       </el-menu>
   </div>
 </template>
@@ -40,5 +39,11 @@
 
 .tab{
     font-weight: bold;
+}
+
+.myheader{
+    width: 100%;
+    position: fixed;
+    z-index: 1500;
 }
 </style>
