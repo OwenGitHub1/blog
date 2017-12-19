@@ -6,9 +6,10 @@
                 <img src="../assets/logo.png" class="logo">
             </el-col>
             <el-col :span="16">
-                <el-menu-item index="1"><span class="tab">首页</span></el-menu-item>
-                <el-menu-item index="2"><span class="tab">博客</span></el-menu-item>
-                <el-menu-item index="3"><span class="tab">关于</span></el-menu-item>
+                <el-menu-item index="1" @click="$router.push('/')"><span class="tab">首页</span></el-menu-item>
+                <el-menu-item index="2" @click="$router.push('/blog')"><span class="tab">博客</span></el-menu-item>
+                <el-menu-item index="3" @click="$router.push('/tool')"><span class="tab">工具</span></el-menu-item>
+                <el-menu-item index="4" @click="$router.push('/about')"><span class="tab">关于</span></el-menu-item>
             </el-col>
         </el-row>
       </el-menu>

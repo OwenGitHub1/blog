@@ -28,10 +28,20 @@
               <br>
               <div class="line"></div>
               <el-row>
-                  <el-col :span="6" v-for = "item in 6" key="item">
+                  <el-col :span="6" v-for = "item in article" key="item">
                       <div class="item">
-                          <img src="../assets/test1.jpeg" style="width: 200px">
-                          <div>test name</div>
+                          <img :src="item.img" style="width: 200px">
+                          <el-row>
+                              <el-col :span="6">
+                                  <i class="el-icon-view">{{item.read}}</i>
+                              </el-col>
+                              <el-col :span="6">
+                                  <i class="el-icon-edit-outline">{{item.read}}</i>
+                              </el-col>
+                              <el-col :span="12">
+                                  <small>2017-12-17</small>
+                              </el-col>
+                          </el-row>
                       </div>
                   </el-col>
               </el-row>
@@ -61,20 +71,31 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import MyNav from '~/components/Nav.vue'
 import MyFooter from '~/components/Footer.vue'
 
 export default {
+    data () {
+        return {
+            article: [
+              {name: 'test1',
+                url: 'http://baidu.com',
+                img: 'http://localhost:3000/test1.jpeg',
+                read: '100',
+                message: '10'
+              }
+            ],
+            tools: []
+        }
+    },
   components: {
-    Logo,
     MyNav,
     MyFooter
   }
 }
 </script>
 
-<style>
+<style slot-scoped>
 .container {
   min-height: 100vh;
   display: flex;
@@ -124,8 +145,13 @@ export default {
 }
 
 .item{
+    width: 220px;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-top: 10px;
+
 }
 </style>
